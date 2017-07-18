@@ -33,7 +33,7 @@ dialect_sql::clone_impl() const {
 
 void
 dialect_sql::write_no_limit() {
-    write("LIMIT -1 ");
+    write(" LIMIT -1 ");
 }
 
 void
