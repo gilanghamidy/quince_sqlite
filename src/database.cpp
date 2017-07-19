@@ -114,7 +114,7 @@ database::database(
     ),
     _spec({
         filename,
-        (     (may_write ? SQLITE_OPEN_READWRITE : SQLITE_OPEN_READONLY)
+        (     (may_write ? (SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE) : SQLITE_OPEN_READONLY)
             | (mutex ? SQLITE_OPEN_FULLMUTEX : SQLITE_OPEN_NOMUTEX)
             | (share_cache ? SQLITE_OPEN_SHAREDCACHE : SQLITE_OPEN_PRIVATECACHE)
         ),
